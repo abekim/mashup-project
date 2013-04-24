@@ -1,8 +1,16 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+category {
+  font-size: 12px;
+  color: #777777;
 }
 
-a {
-  color: #00B7FF;
+address {
+  font-size: 15px;
+}
+
+.response {
+  display: none;
+}
+
+.check-in {
+  float: right;
 }

@@ -1,4 +1,19 @@
 extends layout
 
+block nav-content
+  li.active
+    a(href='/') Home
+  li
+    a(href='/new') Add Location
+
 block content
-  h1 Welcome to FourTube
+  h1 Check into a location!
+  div(class="locationList")
+    each loc in locations
+      button(class="check-in", name="#{loc.value}") Check in here!
+      address(id="#{loc.name}", class="location")
+        strong #{loc.name}  
+        strong
+          category [ #{loc._cat.label} ]
+        br
+        | #{loc.address}

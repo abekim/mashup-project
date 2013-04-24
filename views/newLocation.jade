@@ -1,0 +1,25 @@
+extends layout
+
+block nav-content
+  li
+    a(href='/') Home
+  li.active
+    a(href='/new') Add Location
+
+block content
+  h1 Add a New Location
+
+  div
+    label Name
+    input(type="text", id="name", autofocus)
+    br
+    label Category
+    select(id="category")
+      option(value="", label="Select a category..")
+      each cat in categories
+        option(value="#{cat.label}", label="#{cat.label}")
+    br
+    label Address
+    input(type="text", id="address")
+    br
+    button(id="submitLocation", class="btn") Submit
