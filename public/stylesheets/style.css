@@ -14,3 +14,19 @@ address {
 .check-in {
   float: right;
 }
+
+.labels {
+  color: #777777;
+  font-size: 24.5px;
+  line-height: 40px;
+  margin-left: 20px;
+}
+
+#title {
+  font-size: 38.5px;
+  line-height: 40px;
+}
+
+#head {
+  margin-bottom: 20px;
+}

@@ -1,0 +1,13 @@
+extends layout
+
+block nav-content
+  li
+    a(href='/') Home
+  li
+    a(href='/new') Add Location
+
+block content
+  #head
+    strong#title #{loc.name}
+    strong.labels [ #{loc._cat.label} ]
+  p #{loc.address}

@@ -49,21 +49,11 @@ exports.newCategory = function (req, res) {
 };
 
 exports.checkin = function (req, res) {
-  models.Loc.findOne({ value: req.body.location }).exec(function (err, doc) {
-    http.get('http://gdata.youtube.com/feeds/api/videos?q=football+-soccer&max-results=2&v=2',
-      // function(data) {
-      //   var i = 0;
-      //   data.on('data', function (chunk) {
-      //     if (!i) {
-      //       console.log('BODY: ' + chunk);
-      //       i++;
-      //     }
-      //   });
-      //   // var from = data.indexOf('<div id="results"');
-      //   // var to = data.substr(from).indexOf('</ol');
-      //   // console.log(data.substring(from, from + to + '</ol>  </div>'.length));
-      // }
-    console.log
-    );
+  // console.log('checking in');
+  models.Loc.findOne({ value: req.params.location }).populate('_cat').exec(function (err, doc) {
+    if (err)
+      return console.log("error checking in");
+    console.log(doc);
+    res.render('detail', { title: doc.name + ' - FourTube', loc:doc });
   });
 };

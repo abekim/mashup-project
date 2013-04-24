@@ -16,6 +16,6 @@ $(function () {
   $('.check-in').on('click', function () {
     var value = $(this).attr('name');
 
-    $.post('/loc/' + value, { location: value });
+    window.location.href = '/loc/' + value;
   });
 });
