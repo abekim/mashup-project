@@ -16,7 +16,7 @@ exports.newLocation = function (req, res) {
   models.Category.find().exec(function (err, docs) {
     if (err)
       return console.log("error loading categories");
-    res.render('newLocation', { title: 'FourTube', categories: docs });
+    res.render('newLocation', { title: 'Add New Location - FourTube', categories: docs });
   });
 };
 
@@ -37,14 +37,16 @@ exports.create = function (req, res) {
 };
 
 exports.newCategory = function (req, res) {
+  res.render('newCategory', { title: 'Add New Category - FourTube' });
+};
+
+exports.createCategory = function (req, res) {
   var newCat = new models.Category({ label: req.body.label });
 
   newCat.save(function (err, docs) {
     if (err)
       return console.log("error saving Category", err);
     console.log("created a new category");
-
-    res.redirect('/');
   });
 };
 

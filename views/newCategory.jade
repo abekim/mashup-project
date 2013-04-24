@@ -1,0 +1,18 @@
+extends layout
+
+block nav-content
+  li
+    a(href='/') Home
+  li
+    a(href='/new') Add Location
+  li.active
+    a(href='/newCategory') Add Category
+
+block content
+  h1 Add a New Category
+
+  div
+    label Name
+    input(type="text", id="label", autofocus)
+    br
+    button(id="submitCategory", class="btn") Submit

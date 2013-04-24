@@ -19,3 +19,13 @@ $(function () {
     window.location.href = '/loc/' + value;
   });
 });
+
+$(function () {
+  $('#submitCategory').on('click', function () {
+    var label = $('#label').val();
+
+    $.post('/newCategory', { label: label });
+
+    window.location.href = "/";
+  });
+});

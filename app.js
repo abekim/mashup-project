@@ -33,7 +33,8 @@ app.configure('development', function(){
 app.get('/', routes.index);
 app.get('/new', index.newLocation);
 app.post('/new', index.create);
-app.post('/newCategory', index.newCategory);
+app.get('/newCategory', index.newCategory)
+app.post('/newCategory', index.createCategory);
 app.get('/loc/:location', index.checkin);
 
 http.createServer(app).listen(app.get('port'), function(){
